@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 200vh;
+    }
+
+    :root {
+      --primary-color: rgb(94, 67, 217);
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      padding: 25px 100px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: 0.5s;
+    }
+
+    .brand {
+      position: relative;
+      font-size: 22px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    .nav {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      list-style: none;
+    }
+
+    .nav li {
+      position: relative;
+    }
+
+    .nav a {
+      position: relative;
+      margin: 0 10px;
+      font-size: 18px;
+      font-family: 'fangsong';
+      font-weight: bold;
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+
+    .change {
+      padding: 15px 100px;
+      background-color: var(--primary-color);
+    }
+
+    .change .brand,
+    .navbar.change a {
+      color: rgb(255, 255, 255);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <a href="#" class="brand">Brand</a>
+    <ul class="nav">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+
+  <script>
+    window.addEventListener('scroll', function () {
+      let navbar = document.querySelector('.navbar');
+
+
+      /*  navbar.classList.toggle("change",window.scrollY>0); */
+      if (window.scrollY > 0) {
+        navbar.classList.add("change");
+      } else {
+        navbar.classList.remove("change");
+      }
+    })
+  </script>
+</body>
+
+</html>

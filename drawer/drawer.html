@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #drawer-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 999;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    }
+    #drawer-wrapper.drawer-open {
+      opacity: 1;
+      visibility: visible;
+    }
+    #drawer-panel {
+      --transition-time: 0.3s;
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100%;
+      background-color: #fff;
+      transition: right var(--transition-time) ease-in-out;
+      z-index: 1000;
+      overflow-y: auto;
+    }
+    #drawer-panel.drawer-open {
+      right: 0;
+    }
+    .drawer-content {
+      padding: 20px;
+    }
+    .no-scroll {
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+<body>
+
+  <button onclick="openDrawer()">open</button>
+  <div id="drawer-wrapper" onclick="closeDrawer()"></div>
+  <div id="drawer-panel">
+    <div class="drawer-content">hello</div>
+  </div>
+  
+
+
+  <script>
+    function openDrawer() {
+      document.body.classList.add('no-scroll')
+      document.getElementById('drawer-wrapper').classList.add('drawer-open')
+      document.getElementById('drawer-panel').classList.add('drawer-open')
+      document.getElementById('drawer-panel').style.setProperty('--transition-time', '0.2s');
+      document.getElementById('drawer-panel').scrollTop = 0
+    }
+    function closeDrawer() {
+      document.body.classList.remove('no-scroll')
+      document.getElementById('drawer-wrapper').classList.remove('drawer-open')
+      document.getElementById('drawer-panel').classList.remove('drawer-open')
+      document.getElementById('drawer-panel').style.setProperty('--transition-time', '0.1s');
+    }
+  </script>
+</body>
+
+</html>

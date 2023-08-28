@@ -1,0 +1,16 @@
+body {
+  /* background: url('./hero-bg-2x.webp'); */
+  background: url('./hero-bg-2x.webp') center top / cover #0d1117;
+  background-repeat: no-repeat;
+  height: 100vh;
+  /* background-size: cover; */
+  /* background-position: center top; */
+  color: #fff;
+  /* background-color: #0d1117; */
+}
+.container {
+  border: 5px solid green;
+}
+.col-sm {
+  border: 5px solid red;
+}
