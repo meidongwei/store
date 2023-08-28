@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			transition: all 1s;
+			padding: 0 30px;
+		}
+
+		.switch {
+			position: absolute;
+			top: 20px;
+			right: 50px;
+			width: 40px;
+			height: 20px;
+			border: 2px solid black;
+			border-radius: 20px;
+			cursor: pointer;
+			transition: all 3s;
+		}
+
+		.white {
+			position: absolute;
+			top: 1.5px;
+			left: 2px;
+			height: 13px;
+			width: 13px;
+			background-color: #000000;
+			border-radius: 50%;
+			transition: all 1s;
+		}
+
+		.black {
+			position: absolute;
+			top: 1.5px;
+			right: 2px;
+			height: 13px;
+			width: 13px;
+			background-color: #ffffff;
+			border-radius: 50%;
+			transition: all 1s;
+		}
+
+		h1 {
+			margin: 100px auto;
+			text-align: center;
+		}
+
+		p {
+			margin: 0 auto;
+			max-width: 900px;
+		}
+	</style>
+</head>
+
+<body id="body">
+	<div class="switch">
+		<div class="white" id="circle"></div>
+	</div>
+	<h1>Life of Pi</h1>
+	<p>
+		Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum explicabo amet sapiente minus at iusto aliquam fuga
+		aspernatur nesciunt quam? Possimus eligendi architecto nulla quasi similique odit doloremque reiciendis expedita? Ea
+		illum numquam sequi dolor deleniti itaque nulla possimus, atque molestiae omnis excepturi aut eaque iste pariatur
+		ipsa ducimus maxime est ad voluptas consectetur veniam magni libero amet. Ab odit, a fugit ipsum dolor excepturi
+		explicabo doloremque dicta eius cupiditate modi, vitae dolorem magnam dignissimos! Beatae aperiam asperiores quaerat
+		cumque praesentium sit accusamus. Accusamus dolorum sint quisquam. Blanditiis eos incidunt consequatur? Dignissimos,
+		itaque illum. Quia nobis dicta nemo magnam necessitatibus!
+	</p>
+
+	<script>
+		var circle = document.getElementById('circle')
+		var switchBtn = document.querySelector('.switch')
+		var body = document.getElementById('body')
+		var temp = 1
+		
+		circle.addEventListener('click', function () {
+			if (temp == 1) {
+				this.className = 'black'
+				temp = 0
+				switchBtn.style.border = '2px solid #ffffff'
+				body.style.backgroundColor = 'rgb(7, 7, 29)'
+				body.style.color = 'white'
+			} else {
+				this.className = 'white'
+				temp = 1
+				switchBtn.style.border = '2px solid #000000'
+				body.style.backgroundColor = 'white'
+				body.style.color = 'black'
+			}
+		})
+
+	</script>
+</body>
+
+</html>
